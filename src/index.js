@@ -1,17 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import index from './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+    	username: '',
+    	age: '',
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {    
+
+  	var key = event.target.name;
+  	var val = event.target.value; 
+
+  	this.setState({[key] : val});  
+  }
+  
+  handleSubmit(event) {
+    alert('Nama : '+this.state.username+' Umur : '+this.state.age+' Tahun');  
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}> 
+
+      	<label>
+      		Name:<input type="text" className="form-control" name="username"  value={this.state.username} onChange={this.handleChange} />        
+      	</label>
+
+      	<label>
+      		umur:<input type="text" className="form-control" name="age" value={this.state.age} onChange={this.handleChange} />        
+      	</label>
+      	<input className="btn btn-primary" type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<React.StrictMode>
+   		<App />
+   	</React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
