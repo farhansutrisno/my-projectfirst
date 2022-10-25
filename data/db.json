@@ -1,14 +1,9 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Hit the gym",
-      "done": false
-    },
-    {
-      "title": "Pay bills",
-      "done": true,
-      "id": 2
+      "title": "Farhan sutrisno",
+      "done": false,
+      "id": 1
     }
   ]
 }
