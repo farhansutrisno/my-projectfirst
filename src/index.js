@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import index from './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
-// test 
-
+//cek 
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
