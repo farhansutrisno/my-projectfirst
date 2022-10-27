@@ -21,10 +21,6 @@ const Header = ({setRefresh}) => {
       setTitle("")
       setRefresh(true)
 
-      setTimeout(() => {
-        alert('Berhasil menambahkan record')
-      }, 500)
-
     });
 
   }
